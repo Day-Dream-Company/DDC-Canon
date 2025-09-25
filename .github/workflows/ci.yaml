@@ -22,6 +22,7 @@ jobs:
           git submodule sync
           git submodule update --init source/content-submodule
           rm -rf source/content/*if quart
+          mkdir -p source/content
           cp -r source/content-submodule/* source/content/
           echo "Submodule unpacked into source/content"
 

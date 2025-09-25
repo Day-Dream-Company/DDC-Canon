@@ -25,6 +25,12 @@ jobs:
           mkdir -p source/content
           cp -r source/content-submodule/* source/content/
           echo "Submodule unpacked into source/content"
+      - name: Debug content folder
+        run: |
+          echo "Quartz input folder:"
+          ls source/content
+          echo "index.md contents:"
+          head -n 20 source/content/index.md
 
   build-and-test:
     needs: prepare-submodule

@@ -27,7 +27,7 @@ jobs:
           echo "Submodule unpacked into source/content"
 
   build-and-test:
-    needs: prepare-submodule:
+    needs: prepare-submodule
     runs-on: ubuntu-latest
     permissions:
       contents: write

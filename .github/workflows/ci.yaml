@@ -6,6 +6,22 @@ on:
   workflow_dispatch:
 
 jobs:
+  prepare-submodule:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Unpack submodule into Quartz folder
+        run: git submodule update --init source/content-submodule
+          rm -rf source/content/*if quart
+          cp -r source/content-submodule/* source/content/
+          echo "Submodule unpacked into source/content"
+
   build-and-test:
     runs-on: ubuntu-latest
     permissions:

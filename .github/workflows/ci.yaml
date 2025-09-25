@@ -17,7 +17,9 @@ jobs:
           submodules: true
 
       - name: Unpack submodule into Quartz folder
-        run: git submodule update --init source/content-submodule
+        run: git config --file .gitmodules submodule.source/content-submodule.url https://${{ secrets.DDC_CANON_ACTIONS }}@github.com/Day-Dream-Company/DDC-Lore-Vault.git
+          git submodule sync
+          git submodule update --init source/content-submodule
           rm -rf source/content/*if quart
           cp -r source/content-submodule/* source/content/
           echo "Submodule unpacked into source/content"

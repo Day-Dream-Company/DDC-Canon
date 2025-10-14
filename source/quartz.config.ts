@@ -66,7 +66,7 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: true }), //false by default
+      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
@@ -88,9 +88,6 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.NotFoundPage(),
     ],
-  },
-  markdown: {
-    enableHtml: true,   // allow raw HTML in Markdown, including ?file=… in src
   },
 }
 

@@ -89,6 +89,9 @@ const config: QuartzConfig = {
       Plugin.NotFoundPage(),
     ],
   },
+  markdown: {
+    enableHtml: true,   // allow raw HTML in Markdown, including ?file=… in src
+  },
 }
 
 export default config
